@@ -1,0 +1,13 @@
+---
+- hosts: windows
+  vars:
+    description: This is a test
+  tasks:
+  - name: create a file with hostname and OS info
+    template:
+      src: index.html.j2
+      dest: C:\inetpub\wwwroot\index_j2.html
+  - name: Copying file to windows server
+    win_copy:
+      src: /home/ansible/index.html
+      dest: C:\inetpub\wwwroot\index_j2.html    

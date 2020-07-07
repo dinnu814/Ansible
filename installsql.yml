@@ -1,0 +1,7 @@
+---
+- hosts: windows
+  tasks:
+    name: download SSMS.exe
+    win_get_url:
+        url: https://www.microsoft.com/en-us/download/confirmation.aspx?id=29062
+        dest: C:\downloads\

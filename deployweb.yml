@@ -1,0 +1,11 @@
+---
+- hosts: windows
+  tasks:
+    - name: download script to install github
+      win_get_url:
+        url: https://github.com/git-for-windows/git/releases/download/v2.27.0.windows.1/Git-2.27.0-64-bit.exe
+        dest: C:\downloads\Git-2.27.0-64-bit.exe
+    - name: execute powershell to install git hub
+      win_command: powershell.exe "Start-Process -Wait -FilePath 'C:\Downloads\Git-2.27.0-64-bit.exe' -ArgumentList '/SP- /VERYSILENT /SUPPRESSMSGBOXES /FORCECLOSEAPPLICATIONS'"
+    - name: clone the website from git
+      win_command: git clone https://github.com/AzureWorkshops/samples-simple-iis-website.git C:\inetpub\wwwroot\samples-simple-iis-website

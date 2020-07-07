@@ -1,0 +1,10 @@
+---
+- hosts: windows
+  tasks:
+    - name: copy file
+      win_copy:
+        src: C:\Users\dchanna\Documents\Terraform\EC2\EC2IIS\SetupIIS.ps1
+        dest: C:\downloads\SetupIIS.ps1
+    - name: Run an executable and send data to the stdin for the executable
+      win_command: powershell.exe C:\downloads\SetupIIS.ps1
+        

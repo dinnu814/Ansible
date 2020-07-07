@@ -1,0 +1,9 @@
+---
+- hosts: windows
+  become: yes
+  become_method: runas
+  tasks:
+  - name: show dir
+    win_command: powershell.exe dir
+    become: yes
+    become_method: runas 
