@@ -2,7 +2,7 @@
 -  hosts: webservers
    tasks:
    - name: Install Apache server
-     yum:
+     apt:
         name: httpd
         state: present
    - name: ensure apache service is running
