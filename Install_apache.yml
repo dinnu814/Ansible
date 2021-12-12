@@ -1,12 +1,8 @@
 ---
 -  hosts: webservers
+   become: yes
    tasks:
    - name: Install Apache server
      apt:
-        name: httpd
+        name: apache2
         state: present
-   - name: ensure apache service is running
-     service:
-        name: httpd
-        state: started
-        enabled: yes
