@@ -17,4 +17,4 @@ jobs:
     - name: print the files in directory
       run: ls
     - name: run ansible code
-      run: ansible-playbook nginx.yml
+      run: ansible-playbook /home/runner/work/Ansible/Ansible/nginx.yml
