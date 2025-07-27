@@ -6,15 +6,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: update apt get repo
-        run: sudo apt-get update
-
-      - name: install ansibe
-        run: sudo apt install ansible -y
-
-      - name: checkout code
-        uses: actions/checkout
-
-      - name: run ansible code
-        run: ansible-playbook ./Ansible/nginx.yml --limit localhost
+    - name: update apt get repo
+      run: sudo apt-get update
+    - name: install ansibe
+      run: sudo apt install ansible -y
+    - name: checkout code
+      uses: actions/checkout@v4
+    - name: run ansible code
+      run: ansible-playbook ./Ansible/nginx.yml --limit localhost
         
