@@ -12,6 +12,9 @@ jobs:
       run: sudo apt install ansible -y
     - name: checkout code
       uses: actions/checkout@v4
+    - name: print directory
+      run: pwd
+    - name: print the files in directory
+      run: ls
     - name: run ansible code
-      run: ansible-playbook ./Ansible/Ansible/nginx.yml --limit localhost
-        
+      run: ansible-playbook ./Ansible/Ansible/nginx.yml
